@@ -1,5 +1,5 @@
 /*
-This test is performed to test the Add other services reported bug.
+This test is performed to test Add services charges the reported bug.
 */
 package hotel.entities;
 import hotel.credit.CreditCard;
@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 
 public class BookingTest {
 
-    //Define all the require variables
+    //Define all the required variables
     Booking booking;
     Guest guest;
     Room room;
@@ -31,7 +31,7 @@ public class BookingTest {
         stayLength = 7;
         noOfOccupants = 3;
         creditCard = new CreditCard(CreditCardType.VISA, 123123123, 123);
-        //Create an instance of Booking class using the above parameters
+        //Create an instance of Booking class using the parameters
         booking = new Booking(guest, room, arrivalDate, stayLength, noOfOccupants, creditCard);
     }
 	
@@ -41,5 +41,19 @@ public class BookingTest {
         booking = null; //Set booking object to null
     }
 	
+	/*Test of addServiceCharge method of Booking class*/
+    @Test
+    public void testAddServiceCharge() {
+        List<ServiceCharge> charges = null;
+        ServiceCharge currentServiceCharge = null;
+        String actualResult = "";
 
+        String expectedResult = "Service Type is RESTAURANT and Service Charge is 535.0"; //Define expected result
+        booking.setState();
+        booking.addServiceCharge(ServiceType.RESTAURANT, 535); //Call the method
+        charges = booking.getCharges(); //Get the charges list
+        currentServiceCharge = charges.get(0); //Get the first item from the list
+        actualResult = "Service Type is " + currentServiceCharge.getType() + " and Service Charge is " + currentServiceCharge.getCost();
+        assertEquals(expectedResult, actualResult); //Compare the  expected result with the actual result
+    }
 }
