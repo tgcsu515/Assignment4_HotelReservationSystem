@@ -40,4 +40,10 @@ public class HotelTest {
     public void tearDown() {
         hotel = null;
     }
+    //Test the checkout method
+    @Test
+    public void testCheckout() {
+        int roomId = 301;
+	hotel.checkout(roomId);
+	}
 }
