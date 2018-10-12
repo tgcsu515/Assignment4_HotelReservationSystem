@@ -46,4 +46,14 @@ public class HotelTest {
         int roomId = 301;
 	hotel.checkout(roomId);
 	}
+	// check is record still showing after checkout.
+    @Test
+    public void testFindActiveBookingByRoomId() {
+        
+        int roomId = 301;
+        hotel.checkout(roomId);
+        Booking expectedExceptionResult = null;
+        Booking actualExceptionresult = hotel.findActiveBookingByRoomId(roomId);
+        assertEquals(expectedExceptionResult, actualExceptionresult);
+    }
 }
