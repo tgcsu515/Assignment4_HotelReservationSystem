@@ -136,6 +136,10 @@ public class Booking {
 	public void checkIn() {
 		room.checkin();
 	}
+	  
+    public String getState() {
+            return state.toString();
+    }
 
 
 	public void addServiceCharge(ServiceType serviceType, double cosst) {
