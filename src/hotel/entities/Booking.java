@@ -136,11 +136,11 @@ public class Booking {
 	public void checkIn() {
 		room.checkin();
 	}
-	  
+	  //This method is implemented By Gurpreet Gill for testing purpose
     public String getState() {
             return state.toString();
     }
-
+	  //This method is implemented By Gurpreet Gill for testing purpose
     public void setState()  {
             this.state = State.CHECKED_IN;       
     }
