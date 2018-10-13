@@ -141,6 +141,10 @@ public class Booking {
             return state.toString();
     }
 
+    public void setState()  {
+            this.state = State.CHECKED_IN;       
+    }
+
 
 	public void addServiceCharge(ServiceType serviceType, double cosst) {
 		charges.add(new ServiceCharge(serviceType, cost));
