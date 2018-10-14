@@ -31,4 +31,20 @@ public class CheckoutCTLTest {
     CreditCard newCreditCard;
     private static Hotel hotel;
     CheckoutCTL checkOutCTLObj;
+	
+	@Before
+    public void setUp() throws Exception {
+        //Create the testing backgroud
+        newGuest = new Guest("Peter Dawson", "Melbourne", 042345224); //Create a new Guest 
+        newRoom = new Room(1102, RoomType.SINGLE); //Create a new Room
+        Date arrivalDate = new Date();
+        stayLength = 2;
+        noOfOccupants = 1;
+        newCreditCard = new CreditCard(CreditCardType.VISA, 234688654, 248); //Create a new Credit Card
+        //Create an instance of Booking class using the above parameters
+        bookingObj = new Booking(newGuest, newRoom, arrivalDate, stayLength, noOfOccupants, newCreditCard);
+        hotel = HotelHelper.loadHotel(); //Create a new Hotel instance
+        checkOutCTLObj = new CheckoutCTL(hotel); //Create a new CheckoutCTL object
+    }
+
 }
