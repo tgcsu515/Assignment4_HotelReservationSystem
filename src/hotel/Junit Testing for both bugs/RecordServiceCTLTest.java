@@ -1,4 +1,11 @@
-
+/**Developed by Kanchan Bala,  Course : MIT, Subject: Professional Programming Practices, Team: TeamGenius
+ * Student ID: 11635336
+ * Assessment #4, (Debugging)
+ * @version 9.0.4(build 9.0.4+ 11)
+ *
+ * In this program, I have created a setup and write a code to test the recordServiceCTL, in which the first bug have been reported. This testing 
+ * has been failed due to the bug.
+ */
 
 import hotel.HotelHelper;
 import hotel.credit.CreditCard;
@@ -17,6 +24,7 @@ import static org.junit.Assert.*;
  
 public class RecordServiceCTLTest {
     
+	//created object of the classes which are required for the system
     RecordServiceCTL recordServiceCTLObj;
     Hotel hotelObj;
     Booking bookingObj;
@@ -27,7 +35,7 @@ public class RecordServiceCTLTest {
     
     
     @Before
-    public void setUp() throws Exception {
+    public void setUp() throws Exception {//created setup for the testing by passing the parameters
         guestObj = new Guest("Kanchan", "Melbourne", 043132232);
         roomObj = new Room(4890, RoomType.DOUBLE);
         Date arrivalDate = new Date();//creating object of date
@@ -41,7 +49,7 @@ public class RecordServiceCTLTest {
     
     @After
     public void tearDown() {
-        guestObj = null;
+        guestObj = null;//initializing the objects with null value
         roomObj = null;
         creditCardObj = null;
         bookingObj = null;
@@ -52,8 +60,8 @@ public class RecordServiceCTLTest {
     
     @Test
     public void testSecondReportedBug() {
-        String actualResult = "";
-        String expectedResult = "No active booking for room id: 301";
+        String actualResult = "";//defining actual result
+        String expectedResult = "No active booking for room id: 301";//defining expected result
         hotelObj.checkout(roomId);
         bookingObj = hotelObj.findActiveBookingByRoomId(roomId);
         if(bookingObj == null){
@@ -62,6 +70,6 @@ public class RecordServiceCTLTest {
         else{
             actualResult = String.format("Room Id already exist : %d", roomId);
         }
-        assertEquals(expectedResult, actualResult);
+        assertEquals(expectedResult, actualResult);//comparing the expected and actual results
     }  
 }
