@@ -57,5 +57,18 @@ public class CheckoutCTLTest {
         hotel = null;
         checkOutCTLObj = null;
     }
+	
+	/* Test of testBuggyBehaviorOfReportedFirstBug() method of CheckoutCTL class */
+    @Test
+    public void testBuggyBehaviorOfReportedFirstBug() {
+        //Define expected result
+        String expectedResult = "    Restaurant  :     $200.00\n" + "    Room Service:     $150.00\n" + "Total: $350.00\n";
+        bookingObj.addServiceCharge(ServiceType.RESTAURANT, 200); //Add a new Service Charge to the booking
+        bookingObj.addServiceCharge(ServiceType.ROOM_SERVICE, 150);//Add another new Service Charge to the booking
+        String actualResult = checkOutCTLObj.getAllServiceChargesRecorded(bookingObj); //Get the actual result
+        assertEquals(expectedResult, actualResult);  //Compare the  expected result with the actual result
+    }
+}
+
 
 }
