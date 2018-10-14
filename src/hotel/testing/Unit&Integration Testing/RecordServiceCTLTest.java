@@ -58,4 +58,24 @@ public class RecordServiceCTLTest {
         currentHotel = null;
         recordServiceCTLObj = null;
     }
+	
+	/* Test of testBuggyBehaviorOfReportedSecondBug method of RecordServiceCTL class */
+    @Test
+    public void testBuggyBehaviorOfReportedSecondBug() {
+        //Define the actual result
+        String actualResult;
+        //Define the expected result
+        String expectedResult = "No active booking for room id: 301";
+        currentHotel.checkout(roomId); //Check out the guest from the room
+        currentBooking = currentHotel.findActiveBookingByRoomId(roomId); //Get the active booking using the room Id
+        if (currentBooking == null) {
+            //Get the actual result if the current booking is null after the guest has checked out 
+            actualResult = String.format("No active booking for room id: %d", roomId);
+        } else {
+            //Get the actual result if the current booking is not null even after guest has checked out
+            actualResult = String.format("There is an active booking for room id: %d", roomId);
+        }
+        assertEquals(expectedResult, actualResult);  //Compare the  expected result with the actual result      
+    }
+	
 }
