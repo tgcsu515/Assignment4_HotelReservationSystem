@@ -1,3 +1,12 @@
+/**Developed by Kanchan Bala,  Course : MIT, Subject: Professional Programming Practices, Team: TeamGenius
+ * Student ID: 11635336
+ * Assessment #4, (Debugging)
+ * @version 9.0.4(build 9.0.4+ 11)
+ *
+ * In this program, I have created a setup and write a code to test the checkoutCTL, in which the first bug have been reported. This testing 
+ * has been failed due to the bug.
+ */
+
 import hotel.HotelHelper;
 import hotel.credit.CreditCard;
 import hotel.credit.CreditCardType;
@@ -18,6 +27,7 @@ import static org.junit.Assert.*;
 
 public class CheckoutCTLTest {
     
+	//created objects of the classes
     Hotel hotelObj;
     CheckoutCTL checkoutCTLObj;
     Guest guestObj;
@@ -26,7 +36,7 @@ public class CheckoutCTLTest {
     CreditCard creditCardObj;
        
     @Before
-    public void setUp() throws Exception {
+    public void setUp() throws Exception {//created setup, in which the parameters have been passed for the created objects
         
         guestObj = new Guest("Kanchan", "Melbourne", 043132232);
         roomObj = new Room(4890, RoomType.DOUBLE);
@@ -41,7 +51,7 @@ public class CheckoutCTLTest {
     
     @After
     public void tearDown() {
-        guestObj = null;
+        guestObj = null;//initializing the variables as null
         roomObj = null;
         creditCardObj = null;
         bookingObj = null;
@@ -51,12 +61,12 @@ public class CheckoutCTLTest {
 
      
     @Test
-    public void testFirstReportedBug() {
-        String expectedResult = "BAR_FRIDGE : $200.00" + "Restaurant : $200.00" +"Room Service : $200.00" +"Total : $600.00";
-        bookingObj.addServiceCharge(ServiceType.BAR_FRIDGE, 200);
+    public void testFirstReportedBug() {//testing first bug
+        String expectedResult = "BAR_FRIDGE : $200.00" + "Restaurant : $200.00" +"Room Service : $200.00" +"Total : $600.00";//defining expected result
+        bookingObj.addServiceCharge(ServiceType.BAR_FRIDGE, 200);//passing the parametersto the addServiceCharge
         bookingObj.addServiceCharge(ServiceType.RESTAURANT, 200);
         bookingObj.addServiceCharge(ServiceType.ROOM_SERVICE, 200);
-        String actualResult = checkoutCTLObj.getServiceChargesRecorded(bookingObj);
-        assertEquals(expectedResult, actualResult);
+        String actualResult = checkoutCTLObj.getServiceChargesRecorded(bookingObj);//getting actual result
+        assertEquals(expectedResult, actualResult);//comparing expected and actual results
     }
 }
