@@ -126,6 +126,7 @@ public class Hotel {
 			throw new RuntimeException(mesg);
 		}
 		booking.checkOut();
+		//Reported second bug was occured in this method and the following code line was added to fix the bug
 		activeBookingsByRoomId.remove(roomId);
 	}
 
