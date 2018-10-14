@@ -19,4 +19,16 @@ The following RecordServiceCTLTest class implements test method to demonstrate a
 The setUp() method creates the testing environment of RecordServiceCTLTest class.
  */
 public class RecordServiceCTLTest {
+	
+	//Define all the require variables
+    Booking currentBooking;
+    Guest newGuest;
+    Room newRoom;
+    Date currentDate;
+    int stayLength;
+    int noOfOccupants;
+    int roomId;
+    CreditCard newCreditCard;
+    private static Hotel currentHotel;
+    RecordServiceCTL recordServiceCTLObj;
 }
