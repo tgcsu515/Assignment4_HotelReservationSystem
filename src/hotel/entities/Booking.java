@@ -18,7 +18,6 @@ public class Booking {
 	private Date bookedArrival; 
 	private int stayLength;
 	int numberOfOccupants;
-	int cost;
 	long confirmationNumber;
 	CreditCard creditCard;
 	
