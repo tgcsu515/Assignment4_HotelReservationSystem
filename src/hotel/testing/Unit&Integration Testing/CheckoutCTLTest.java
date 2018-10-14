@@ -68,7 +68,5 @@ public class CheckoutCTLTest {
         String actualResult = checkOutCTLObj.getAllServiceChargesRecorded(bookingObj); //Get the actual result
         assertEquals(expectedResult, actualResult);  //Compare the  expected result with the actual result
     }
-}
-
-
+	
 }
