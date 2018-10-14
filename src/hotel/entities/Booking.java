@@ -139,6 +139,7 @@ public class Booking {
 
 
 	public void addServiceCharge(ServiceType serviceType, double serviceCost) {
+		//Reported first bug was occured in the following code line and the bug was fixed
 		charges.add(new ServiceCharge(serviceType, serviceCost));
 	}
 
