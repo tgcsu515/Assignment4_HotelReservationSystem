@@ -118,7 +118,7 @@ public class Hotel {
 		booking.addServiceCharge(serviceType, cost);
 	}
 
-	
+	//Method updated to Fix the bug by Arashdeep kaur
 	public void checkout(int roomId) {
 		Booking booking = activeBookingsByRoomId.get(roomId);
 		if (booking == null) {
@@ -126,6 +126,7 @@ public class Hotel {
 			throw new RuntimeException(mesg);
 		}
 		booking.checkOut();
+		activeBookingsByRoomId.remove(roomId);
 	}
 
 
