@@ -20,4 +20,15 @@ The following CheckoutCTLTest class implements test method to demonstrate and re
 The setUp() method creates the testing environment of CheckoutCTLTest class.
  */
 public class CheckoutCTLTest {
+	
+	//Define all the require variables
+    Booking bookingObj;
+    Guest newGuest;
+    Room newRoom;
+    Date currentDate;
+    int stayLength;
+    int noOfOccupants;
+    CreditCard newCreditCard;
+    private static Hotel hotel;
+    CheckoutCTL checkOutCTLObj;
 }
