@@ -47,4 +47,15 @@ public class RecordServiceCTLTest {
         currentHotel = HotelHelper.loadHotel(); //Create a new Hotel instance
         recordServiceCTLObj = new RecordServiceCTL(currentHotel); //Create a new RecordServiceCTL object
     }
+	
+	@After
+    public void tearDown() {
+        //Set all the created instances to null
+        newGuest = null;
+        newRoom = null;
+        newCreditCard = null;
+        currentBooking = null;
+        currentHotel = null;
+        recordServiceCTLObj = null;
+    }
 }
