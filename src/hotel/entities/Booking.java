@@ -145,8 +145,8 @@ public class Booking {
             this.state = State.CHECKED_IN;       
     }
 
-
-	public void addServiceCharge(ServiceType serviceType, double cost) {
+	//This method fixed by Gurpreet Gill - First reported bug.
+	public void addServiceCharge(ServiceType serviceType, double cost) { //Changed variable name from cosst to cost by Gurpreet Gill
 		charges.add(new ServiceCharge(serviceType, cost));
 	}
 
