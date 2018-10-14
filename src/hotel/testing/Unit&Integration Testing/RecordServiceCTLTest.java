@@ -31,4 +31,20 @@ public class RecordServiceCTLTest {
     CreditCard newCreditCard;
     private static Hotel currentHotel;
     RecordServiceCTL recordServiceCTLObj;
+	
+	@Before
+    public void setUp() throws Exception {
+        //Create the testing backgroud
+        newGuest = new Guest("Jack Peterson", "Melbourne", 04234634); //Create a new Guest 
+        roomId = 301; //Set value for room Id
+        newRoom = new Room(roomId, RoomType.SINGLE); //Create a new Room
+        Date arrivalDate = new Date();
+        stayLength = 2;
+        noOfOccupants = 1;
+        newCreditCard = new CreditCard(CreditCardType.VISA, 25738, 572); //Create a new Credit Card
+        //Create an instance of Booking class using the above parameters
+        currentBooking = new Booking(newGuest, newRoom, arrivalDate, stayLength, noOfOccupants, newCreditCard);
+        currentHotel = HotelHelper.loadHotel(); //Create a new Hotel instance
+        recordServiceCTLObj = new RecordServiceCTL(currentHotel); //Create a new RecordServiceCTL object
+    }
 }
