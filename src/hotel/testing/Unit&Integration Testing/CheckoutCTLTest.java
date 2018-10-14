@@ -46,5 +46,16 @@ public class CheckoutCTLTest {
         hotel = HotelHelper.loadHotel(); //Create a new Hotel instance
         checkOutCTLObj = new CheckoutCTL(hotel); //Create a new CheckoutCTL object
     }
+	
+	    @After
+    public void tearDown() {
+        //Set all the created instances to null
+        newGuest = null;
+        newRoom = null;
+        newCreditCard = null;
+        bookingObj = null;
+        hotel = null;
+        checkOutCTLObj = null;
+    }
 
 }
